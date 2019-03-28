@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "set NODE_ENV=hotdev && webpack-dev-server",
-    "publish": "set NODE_ENV=production && webpack --config webpack.config.js",
+    "release": "set NODE_ENV=production && webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -23,10 +23,7 @@
     "jquery": "^3.2.1",
     "replace-webpack-plugin": "^0.1.2",
     "style-loader": "^0.19.0",
-    "underscore": "^1.8.3"
-  },
-  "dependencies": {
-    "gulp": "^3.9.1",
+    "underscore": "^1.8.3",
     "webpack": "^3.5.4",
     "webpack-dev-server": "^2.7.1"
   }

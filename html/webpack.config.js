@@ -45,7 +45,7 @@ module.exports = {
     path: path.resolve(__dirname, './'),
     publicPath: publicPath,
     libraryTarget: "umd",
-    library:     "softmgr2qq",
+    library:     "gegedev",
     umdNamedDefine: true
   },
   resolve: {
@@ -100,7 +100,7 @@ module.exports = {
   devServer: {
     port: 9988,
     host: '0.0.0.0',
-    public: "local.qq.com:9988",
+    public: "127.0.0.1:9988",
     historyApiFallback: true,
     inline: true,
     noInfo: false,
