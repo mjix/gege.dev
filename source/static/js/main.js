@@ -15,8 +15,8 @@ function renderContent(jinfo){
   box.style.color = jinfo.co;
 
   $("h1").textContent = jinfo.ct.yinli;
-  $('#J_item-yi').textContent = "宜: "+jinfo.ct.yi;
-  $('#J_item-ji').textContent = "忌: "+jinfo.ct.ji;
+  $('#J_item-yi').textContent = ": "+jinfo.ct.yi;
+  $('#J_item-ji').textContent = ": "+jinfo.ct.ji;
   $('#J_item-wuxing span').textContent = jinfo.ct.wuxing;
   $('#J_item-chongsha span').textContent = jinfo.ct.chongsha;
   $('#J_item-baiji span').textContent = jinfo.ct.baiji;
@@ -75,8 +75,8 @@ function initEvent(){
   var btnfull = $('#J_btn-fullscreen');
   btnfull.addEventListener("click", function(e){
     e.preventDefault();
-    if(btnfull.className.indexOf("btn-fullscreened")<0){
-      document.body.requestFullscreen();
+    if(btnfull.className.indexOf("btn-fullscreened")<0 && !mUtils.isFullScreen()){
+      document.documentElement.requestFullscreen();
       btnfull.classList.add("btn-fullscreened");
     }else{
       document.exitFullscreen();
@@ -87,6 +87,23 @@ function initEvent(){
   if(mUtils.isFullScreen()){
     btnfull.classList.add("btn-fullscreened");
   }
+
+  var _screentimer = 0;
+  document.addEventListener("keydown", function(e) {
+    clearTimeout(_screentimer);
+    if (e.keyCode == 27) { //esc
+      //document.exitFullscreen();
+      //btnfull.classList.remove("btn-fullscreened");
+    }
+
+    _screentimer = setTimeout(function(){
+      if(mUtils.isFullScreen()){
+        btnfull.classList.add("btn-fullscreened");
+      }else{
+        btnfull.classList.remove("btn-fullscreened");
+      }
+    }, 200);
+  }, false);
 
   var _silenttimer = 0;
 

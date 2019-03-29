@@ -35,9 +35,11 @@ h1{line-height: 100px; font-size: 50px;}
 .content{position: absolute; left:10%; right: 0; bottom: 20%; opacity: 0; transition: opacity 200ms linear;}
 .content .item{line-height: 20px; padding: 10px 0;}
 .content .item i{font-style: normal; display: inline-block; padding: 0 3px; background:rgba(255,255,255,.3); color:#ccff00; border-radius: 2px;}
-.content .item-yi,.content .item-ji{font-size:14px;}
-.content .item-yi{color:#00F5FF}
-.content .item-ji{color:#FF9900}
+.content .item-yi,.content .item-ji{font-size:14px; line-height: 22px;}
+.content .item-yi .value,.content .item-ji .value{ max-width:550px; margin-left:5px; line-height: 22px;}
+.content .item-yi .label, .content .item-ji .label{font-size: 16px; }
+.content .item-yi{color:#00F5FF;}
+.content .item-ji{color:#FF9900;}
 .item-wuxing, .item-chongsha{}
 .item-chongsha{margin-left:20px;}
 
@@ -62,4 +64,15 @@ h1{line-height: 100px; font-size: 50px;}
     transform: scale(1.2) translate3d(0, 0, 0);
     text-shadow: 0px 0px 0 rgba(255, 0, 0, 0.2);
   }
+}
+
+@media only screen and (max-width: 1500px) {
+  .rulai{right:10%;}
+}
+
+@media only screen and (max-width: 760px) {
+  .content{bottom: auto; top:20%; }
+  .content h1{font-size: 3em;}
+  .rulai{right:auto; left:50%; margin-left:-140px;}
+  .content .item-yi .value,.content .item-ji .value{max-width: 80%;}
 }

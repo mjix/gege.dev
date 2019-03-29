@@ -98,9 +98,9 @@ module.exports = {
     }]
   },
   devServer: {
-    port: 9988,
+    port: 9987,
     host: '0.0.0.0',
-    public: "127.0.0.1:9988",
+    public: "127.0.0.1:9987",
     historyApiFallback: true,
     inline: true,
     noInfo: false,
